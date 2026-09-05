@@ -1,0 +1,3 @@
+** 06/09/26
+
+- git commit --allow-empty -m "chore: initialize project" : to make empty commit or commit without any change
