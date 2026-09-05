@@ -2,3 +2,30 @@
 
 - git commit --allow-empty -m "chore: initialize project" : to make empty commit or commit without any change
 - git fetch : get update code from remote to remote-tracking branch in git folder.
+
+
+- ** git diff cmds **
+1 Working directory vs last commit
+- git diff : Last commit → current unstaged changes.
+
+2 Staging area vs last commit
+- git diff --staged or git diff --cached : Last commit → staged change
+
+3 Two commits
+- git diff A B :  From[A] Top[B]
+
+4 Two branches
+- git diff main develop
+
+5 Local branch vs remote-tracking branch
+- git diff develop origin/develop
+
+6 Specific file only
+- git diff -- README.md
+- git diff A B -- README.md : A → B, but only for README.md.
+
+7 See only file names
+- git diff --name-only
+
+8 See summary of changes
+- git diff --stat
