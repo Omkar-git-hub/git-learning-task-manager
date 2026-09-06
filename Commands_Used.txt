@@ -1,4 +1,4 @@
-** 06/09/26
+** 05/09/26
 
 - git commit --allow-empty -m "chore: initialize project" : to make empty commit or commit without any change
 - git fetch : get update code from remote to remote-tracking branch in git folder.
@@ -29,3 +29,6 @@
 
 8 See summary of changes
 - git diff --stat
+
+*************************************************************************************************************************************************
+** 06/09/26
