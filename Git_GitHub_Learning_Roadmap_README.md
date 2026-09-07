@@ -12,17 +12,17 @@ A structured, hands-on learning path to master Git and GitHub from fundamentals 
 
 Legend:
 
-- ⬜ Not Started
-- 🟨 In Progress
-- ✅ Done
+* ⬜ Not Started
+* 🟨 In Progress
+* ✅ Done
 
 ## Phase 1 — Git Fundamentals
 
-1. ⬜ What is Git?
-2. ⬜ Git vs GitHub
-3. ⬜ Git architecture
-4. ⬜ Working Directory
-5. ⬜ Staging Area
+1. ✅ What is Git?
+2. ✅ Git vs GitHub
+3. ✅ Git architecture
+4. ✅ Working Directory
+5. ✅ Staging Area
 6. ⬜ Local Repository
 7. ⬜ `.git` folder
 8. ✅ `git init`
@@ -65,7 +65,7 @@ Legend:
 33. ⬜ What is a remote repository?
 34. ⬜ `git remote`
 35. ⬜ Adding a remote — `git remote add`
-36. ⬜ Remote names — `origin` and custom names
+36. ✅ Remote names — `origin` and custom names
 37. ⬜ HTTPS remote URL
 38. ⬜ SSH remote URL
 39. ⬜ HTTPS vs SSH
@@ -156,27 +156,46 @@ Legend:
 
 # Current Progress
 
-Already learned and practiced:
+## Git Fundamentals
 
-- ✅ `git init`
-- ✅ `git add`
-- ✅ `git commit`
-- ✅ `git diff`
-- ✅ `git fetch`
-- ✅ `git pull`
-- ✅ `git push`
-- ✅ Remote-tracking branches
-- ✅ Remote names
-- ✅ Fast-forward merge
-- ✅ `--no-ff` merge
-- ✅ Common Base
-- ✅ Merge conflicts
-- ✅ Conflict resolution
+* ✅ What is Git?
+* ✅ Git vs GitHub
+* ✅ Git architecture
+* ✅ Working Directory
+* ✅ Staging Area
 
-## Next
+## Git Commands
 
-Start again from the **classic learning order** with:
+* ✅ `git init`
+* ✅ `git add`
+* ✅ `git commit`
+* ✅ `git diff`
+* ✅ `git fetch`
+* ✅ `git pull`
+* ✅ `git push`
 
-**Phase 1 → Topic 1: What is Git?**
+## Branch & Merge Concepts
 
-The previously learned commands will be revisited in the proper sequence and connected to the complete Git mental model.
+* ✅ Fast-forward merge
+* ✅ `--no-ff` merge
+* ✅ Common Base
+* ✅ Merge conflicts
+* ✅ Conflict resolution
+
+## Remote Concepts
+
+* ✅ Remote names
+* ✅ Remote-tracking branches
+* ✅ `origin` vs custom remote names
+
+---
+
+# Next
+
+**Phase 1 → Topic 6: Local Repository**
+
+We will understand:
+
+**Working Directory → Staging Area → Local Repository → Remote Repository**
+
+and then continue through the classic learning order.
