@@ -1,0 +1,28 @@
+### Staging Area
+
+→ A temporary area where we select changes
+  that we want to include in the next commit.
+
+→ `git add` moves changes from the
+  Working Directory to the Staging Area.
+
+→ We can stage some changes while leaving
+  other changes unstaged.
+
+→ Only staged changes are included in the
+  next commit.
+
+Mental Model:
+
+Working Directory
+        ↓ git add
+Staging Area
+        ↓ git commit
+Local Repository
+
+
+
+
+#Remember:
+
+Staging Area = "These are the changes I want to commit."
