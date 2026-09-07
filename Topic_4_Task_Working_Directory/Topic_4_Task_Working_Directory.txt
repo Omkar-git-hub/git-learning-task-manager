@@ -1,0 +1,37 @@
+### Working Directory
+
+→ The actual project files and folders on our computer
+  where we make changes.
+
+→ It contains the current state of our project files.
+
+→ Git compares the Working Directory with the version
+  stored in the Local Repository.
+
+Git can detect:
+
+- modified  → Existing file content changed
+- deleted   → Existing tracked file was removed
+- untracked → New file Git has never committed
+
+Example:
+
+Working Directory
+        ↓
+   Make changes
+        ↓
+   git status
+        ↓
+Git shows the changes
+
+Important:
+Changes in the Working Directory are NOT committed yet.
+They must be staged and committed to become part of Git history.
+
+
+
+
+
+
+#Working Directory
+→ "What I have right now on my computer"
