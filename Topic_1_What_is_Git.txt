@@ -1,0 +1,35 @@
+#Git
+→ A Distributed Version Control System (DVCS).
+
+→ Used to track changes in source code and files.
+
+→ Stores the history of changes as commits.
+
+→ Allows developers to:
+   • Track changes
+   • Create branches
+   • Merge work
+   • Revert/recover changes
+   • Work independently
+   • Collaborate with others
+
+→ Git works locally on your computer.
+
+
+
+#GitHub
+→ A platform that hosts Git repositories remotely
+  and provides collaboration features.
+
+
+
+
+#Mental Model
+Without Git:
+project_final
+project_final_new
+project_final_latest
+project_final_latest_2 😵
+
+With Git:
+Commit A → Commit B → Commit C → Commit D
