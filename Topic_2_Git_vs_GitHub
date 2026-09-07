@@ -1,0 +1,8 @@
+Git:
+A Distributed Version Control System (DVCS) used to track and manage changes in files and source code.
+
+GitHub:
+A cloud platform built on top of Git that hosts repositories and provides collaboration features such as Pull Requests, Issues, Code Reviews, Actions, and team access.
+
+origin_https/main:
+A remote-tracking branch in my local Git repository that represents the latest known state of the remote main branch on GitHub.
