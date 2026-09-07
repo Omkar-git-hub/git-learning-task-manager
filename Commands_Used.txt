@@ -1,34 +1,106 @@
 ** 05/09/26
 
-- git commit --allow-empty -m "chore: initialize project" : to make empty commit or commit without any change
-- git fetch : get update code from remote to remote-tracking branch in git folder.
+- git commit --allow-empty -m "chore: initialize project"
+  → Create an empty commit without file changes.
+
+- git fetch
+  → Fetch updates from the remote repository and update
+    remote-tracking branches in the local repository.
 
 
-- ** git diff cmds **
-1 Working directory vs last commit
-- git diff : Last commit → current unstaged changes.
+- ** git diff commands **
 
-2 Staging area vs last commit
-- git diff --staged or git diff --cached : Last commit → staged change
+1. Working Directory vs Last Commit
+- git diff
+  → Compare last commit with current unstaged changes.
 
-3 Two commits
-- git diff A B :  From[A] Top[B]
+2. Staging Area vs Last Commit
+- git diff --staged
+- git diff --cached
+  → Compare last commit with staged changes.
 
-4 Two branches
+3. Two Commits
+- git diff A B
+  → Compare commit A with commit B.
+
+4. Two Branches
 - git diff main develop
+  → Compare the current states of two branches.
 
-5 Local branch vs remote-tracking branch
+5. Local Branch vs Remote-Tracking Branch
 - git diff develop origin/develop
+  → Compare a local branch with its remote-tracking branch.
 
-6 Specific file only
+6. Specific File
 - git diff -- README.md
-- git diff A B -- README.md : A → B, but only for README.md.
+  → Show unstaged changes only for README.md.
 
-7 See only file names
+- git diff A B -- README.md
+  → Compare README.md between commit A and commit B.
+
+7. Only File Names
 - git diff --name-only
+  → Show only the names of changed files.
 
-8 See summary of changes
+8. Change Summary
 - git diff --stat
+  → Show a summary of changed files and line counts.
+
 
 *************************************************************************************************************************************************
+
 ** 06/09/26
+
+- git status
+  → Show the current state of the Working Directory and Staging Area.
+
+- git add
+  → Move selected changes from the Working Directory to the Staging Area.
+
+- git commit
+  → Save staged changes as a new commit in the Local Repository.
+
+- git push
+  → Send local commits to the Remote Repository.
+
+- git pull
+  → Fetch remote changes and integrate them into the current local branch.
+
+- git merge
+  → Combine changes from one branch into another branch.
+
+- git merge --no-ff
+  → Force a merge commit even when a fast-forward merge is possible.
+
+- git branch
+  → List or manage branches.
+
+- git branch -r
+  → List remote-tracking branches.
+
+- git branch -a
+  → List local and remote-tracking branches.
+
+- git branch -vv
+  → Show local branches with their upstream/remote-tracking information.
+
+- git remote
+  → Manage remote repository connections.
+
+- git remote -v
+  → Show remote repository URLs.
+
+- git log --oneline --all --graph
+  → Show a compact graphical view of commit history and branches.
+
+- git show <commit>
+  → Show information about a specific commit.
+
+- git switch <branch>
+  → Switch to another branch.
+
+- git checkout <branch>
+  → Switch branches or restore files depending on usage.
+
+- git restore <file>
+  → Restore changes in the Working Directory.
