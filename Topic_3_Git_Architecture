@@ -1,0 +1,45 @@
+#Working Directory
+→ The place on your computer where you work on the project
+  and make changes to files.
+
+        ↓ git add
+
+Staging Area
+→ A place where you select the changes you want to include
+  in the next commit.
+
+        ↓ git commit
+
+Local Repository
+→ The Git repository stored on your computer (.git).
+  It stores your committed project history.
+
+        ↓ git push
+
+Remote Repository
+→ A Git repository hosted on a remote platform such as
+  GitHub, GitLab, or Bitbucket.
+
+
+
+
+#Short mental model
+
+Work → Select → Commit → Share
+
+Working Directory
+      ↓
+Staging Area
+      ↓
+Local Repository
+      ↓
+Remote Repository
+
+
+
+
+#Simple distinction
+
+"Maine code change kiya" → Working Directory
+
+"Maine change commit kiya" → Local Repository
