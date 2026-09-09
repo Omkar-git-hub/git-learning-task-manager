@@ -1,0 +1,379 @@
+# Topic 6 — Local Repository
+
+## 1. What is a Local Repository?
+
+→ The **Local Repository** is the Git repository stored on our computer.
+
+→ It is mainly represented by the hidden `.git` folder inside the project.
+
+→ It stores the project's **committed history**, including:
+
+* Commits
+* Branch information
+* References
+* Git objects
+* Repository configuration
+* Other Git metadata
+
+→ The Local Repository allows us to work with Git **without needing GitHub or an internet connection** for normal local operations.
+
+---
+
+## 2. Important Difference
+
+### Working Directory
+
+→ The actual project files and folders where we work and make changes.
+
+Example:
+
+```text
+project/
+├── app.py
+├── README.md
+└── src/
+```
+
+When we edit `app.py`, we are changing the **Working Directory**.
+
+### Local Repository
+
+→ Git's internal repository stored inside:
+
+```text
+.git/
+```
+
+It stores the committed version history of the project.
+
+---
+
+## 3. Git Architecture
+
+```text
+Working Directory
+        ↓
+    git add
+        ↓
+Staging Area
+        ↓
+   git commit
+        ↓
+Local Repository
+        ↓
+    git push
+        ↓
+Remote Repository
+```
+
+### Mental Model
+
+```text
+Work → Select → Commit → Share
+```
+
+* **Work** → Working Directory
+* **Select** → Staging Area
+* **Commit** → Local Repository
+* **Share** → Remote Repository
+
+---
+
+## 4. What happens during `git commit`?
+
+When we run:
+
+```bash
+git commit
+```
+
+Git takes the changes that are currently in the **Staging Area** and creates a new commit.
+
+The commit is stored in the **Local Repository**.
+
+```text
+Working Directory
+        ↓
+   git add
+        ↓
+Staging Area
+        ↓
+  git commit
+        ↓
+Local Repository (.git)
+```
+
+Only **staged changes** become part of the commit.
+
+---
+
+## 5. Topic 6 Practical Experiment
+
+### Objective
+
+Understand that the Local Repository stores committed project history.
+
+### Experiment
+
+A new file was created:
+
+```text
+Git_Bash_Commands.txt
+```
+
+Initially, Git reported it as:
+
+```text
+Untracked files:
+        Git_Bash_Commands.txt
+```
+
+This meant:
+
+→ The file existed in the Working Directory.
+
+→ Git had not yet included it in the Staging Area or Local Repository.
+
+---
+
+## 6. Staging the File
+
+The file was staged using:
+
+```bash
+git add .
+```
+
+After staging:
+
+```text
+Working Directory
+        ↓
+   git add .
+        ↓
+Staging Area
+```
+
+Git also displayed a Windows line-ending warning:
+
+```text
+LF will be replaced by CRLF
+```
+
+This is related to **Windows line endings**.
+
+It was only a warning and did not prevent the file from being committed.
+
+---
+
+## 7. Creating the Commit
+
+The file was committed using:
+
+```bash
+git commit -m "Add Git_Bash_Commands.txt contains simple git bash cmds."
+```
+
+Commit created:
+
+```text
+0305717 Add Git_Bash_Commands.txt contains simple git bash cmds.
+```
+
+This means the file was now recorded in the **Local Repository**.
+
+---
+
+## 8. Checking Repository Status
+
+After the commit:
+
+```bash
+git status
+```
+
+Output:
+
+```text
+On branch main
+Your branch is ahead of 'origin_https/main' by 2 commits.
+nothing to commit, working tree clean
+```
+
+### Meaning
+
+```text
+nothing to commit
+```
+
+→ There are no new staged/unstaged changes waiting for a commit.
+
+```text
+working tree clean
+```
+
+→ The Working Directory matches the committed state.
+
+```text
+ahead of 'origin_https/main' by 2 commits
+```
+
+→ The local `main` branch contains 2 commits that have not yet been pushed to the remote-tracking branch.
+
+---
+
+## 9. Important Concept
+
+A commit does **not** immediately go to GitHub.
+
+When we commit:
+
+```text
+git commit
+```
+
+the commit is stored locally.
+
+When we push:
+
+```text
+git push
+```
+
+the local commit is sent to the remote repository.
+
+Therefore:
+
+```text
+git commit
+    ↓
+Local Repository
+
+git push
+    ↓
+Remote Repository
+```
+
+---
+
+## 10. Local Repository vs Remote Repository
+
+### Local Repository
+
+```text
+.git/
+```
+
+→ Stored on our computer.
+
+→ Contains local Git history and metadata.
+
+→ Can be used without GitHub for many Git operations.
+
+### Remote Repository
+
+Example:
+
+```text
+GitHub
+```
+
+→ Hosted remotely.
+
+→ Used for backup, collaboration, sharing, Pull Requests, reviews, etc.
+
+---
+
+## 11. Important Commands Used
+
+### `git status`
+
+```bash
+git status
+```
+
+→ Shows the current state of the Working Directory and Staging Area.
+
+---
+
+### `git add`
+
+```bash
+git add .
+```
+
+→ Moves changes from the Working Directory to the Staging Area.
+
+---
+
+### `git commit`
+
+```bash
+git commit -m "message"
+```
+
+→ Creates a commit from staged changes and stores it in the Local Repository.
+
+---
+
+### `git push`
+
+```bash
+git push
+```
+
+→ Sends local commits to the Remote Repository.
+
+---
+
+## 12. Complete Flow
+
+```text
+Create/Edit File
+      ↓
+Working Directory
+      ↓
+   git add
+      ↓
+Staging Area
+      ↓
+  git commit
+      ↓
+Local Repository (.git)
+      ↓
+   git push
+      ↓
+Remote Repository (GitHub)
+```
+
+---
+
+## 13. Key Points to Remember
+
+→ **Working Directory** = Where I actually edit files.
+
+→ **Staging Area** = Where I select changes for the next commit.
+
+→ **Local Repository** = Git repository stored on my computer.
+
+→ `.git` = The hidden directory that contains the local Git repository.
+
+→ `git commit` = Saves staged changes into local Git history.
+
+→ `git push` = Sends local commits to the remote repository.
+
+→ `git commit` does **not** mean GitHub.
+
+→ A commit can exist locally without being pushed to GitHub.
+
+### Remember:
+
+> **Commit = Save locally**
+
+> **Push = Send remotely**
+
+---
+
+## Topic 6 Status
+
+**Topic 6 — Local Repository: ✅ DONE**
