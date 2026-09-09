@@ -1,0 +1,29 @@
+ls
+→ Lists files and folders.
+
+ls -la
+→ Lists all files, including hidden files, with details.
+
+pwd
+→ Shows the current directory path.
+
+cd
+→ Changes the current directory.
+
+mkdir
+→ Creates a new directory.
+
+touch
+→ Creates a new empty file.
+
+rm
+→ Deletes a file.
+
+cat
+→ Displays file contents.
+
+vi
+→ Opens a file in the Vim editor.
+
+clear
+→ Clears the terminal screen.
