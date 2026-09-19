@@ -1,0 +1,197 @@
+# Topic 7 — .git Folder
+
+## 1. What is `.git`?
+
+→ `.git` is a hidden folder created by Git inside a repository.
+
+→ It contains the information Git needs to manage the repository.
+
+→ It is the core of the Local Repository.
+
+→ Do NOT manually modify or delete files inside `.git`.
+
+------------------------------------------------------------------------------------
+
+## 2. Important `.git` Contents
+
+.git/
+│
+├── objects/
+├── refs/
+├── logs/
+├── hooks/
+├── info/
+├── HEAD
+├── index
+├── config
+├── FETCH_HEAD
+└── ORIG_HEAD
+
+
+objects/
+→ Stores Git objects such as commits, trees and file contents.
+
+refs/
+→ Stores references such as branches and tags.
+
+HEAD
+→ Points to the current branch or commit.
+
+index
+→ Represents the Staging Area.
+
+config
+→ Stores repository-specific Git configuration.
+
+logs/
+→ Stores history of reference movements.
+
+FETCH_HEAD
+→ Stores information about the latest fetched remote changes.
+
+ORIG_HEAD
+→ Stores the previous HEAD during certain Git operations.
+
+hooks/
+→ Contains scripts that can run automatically during Git operations.
+
+info/
+→ Contains repository-specific information such as exclude rules.
+
+------------------------------------------------------------------------------------
+
+## 3. Git Data Flow
+
+### New File
+
+New file created
+        ↓
+Working Directory
+        ↓ git add
+Staging Area (index)
+        ↓ git commit
+Local Repository (.git)
+        ↓ git push
+Remote Repository (GitHub)
+
+
+### Modified File
+
+File modified
+        ↓
+Working Directory
+        ↓ git add
+Staging Area
+        ↓ git commit
+Local Repository
+        ↓ git push
+Remote Repository
+
+
+### Deleted File
+
+File deleted
+        ↓
+Working Directory
+        ↓ git add
+Staging Area
+        ↓ git commit
+Local Repository
+        ↓ git push
+Remote Repository
+
+
+------------------------------------------------------------------------------------
+
+## 4. Important Commands
+
+git status
+→ Shows the state of the Working Directory and Staging Area.
+
+git add
+→ Moves selected changes from Working Directory to Staging Area.
+
+git commit
+→ Saves staged changes as a commit in the Local Repository.
+
+git push
+→ Sends local commits to the Remote Repository.
+
+git fetch
+→ Gets remote updates and updates remote-tracking branches.
+
+git pull
+→ Fetches remote changes and integrates them into the current branch.
+
+git diff
+→ Compares changes between different Git states.
+
+
+------------------------------------------------------------------------------------
+
+## 5. Complete Git Flow
+
+                 git add
+Working Directory ─────────→ Staging Area
+                                  │
+                               git commit
+                                  ↓
+                           Local Repository
+                                  │
+                               git push
+                                  ↓
+                          Remote Repository
+                                  │
+                               git fetch
+                                  ↓
+                       Remote-tracking Branch
+
+
+------------------------------------------------------------------------------------
+
+## 6. Simple Mental Model
+
+Working Directory
+→ Where I work.
+
+Staging Area
+→ What I select.
+
+Local Repository
+→ What I committed.
+
+Remote Repository
+→ What I pushed/shared.
+
+
+------------------------------------------------------------------------------------
+
+## 7. Important `.git` Connection
+
+Working Directory
+        ↓ git add
+Staging Area
+        ↓
+      index
+        ↓ git commit
+Local Repository
+        ↓
+    objects/
+        ↓ git push
+Remote Repository
+
+
+Remember:
+
+`.git` = Core of the Local Git Repository
+
+index = Staging Area
+
+objects/ = Git data
+
+refs/ = Branch/tag references
+
+HEAD = Current position
+
+
+## Topic 7 — DONE ✅
