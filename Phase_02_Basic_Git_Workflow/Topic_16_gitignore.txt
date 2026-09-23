@@ -1,0 +1,61 @@
+Topic 16 — .gitignore
+
+→ `.gitignore` tells Git which files/folders to ignore.
+
+Purpose:
+
+→ Prevent unwanted files from being tracked.
+→ Keep unnecessary files out of commits.
+
+Example `.gitignore`:
+
+secret.txt
+*.log
+temp/
+node_modules/
+
+Meaning:
+
+secret.txt
+→ Ignores one specific file.
+
+*.log
+→ Ignores all `.log` files.
+
+temp/
+→ Ignores the entire `temp` folder.
+
+node_modules/
+→ Ignores the `node_modules` folder.
+
+Important:
+
+→ `.gitignore` affects untracked files.
+→ It does not automatically remove files that are already tracked.
+
+Basic flow:
+
+Create file
+    ↓
+.gitignore rule matches
+    ↓
+Git ignores the file
+    ↓
+git status does not show it as untracked
+
+Useful command:
+
+git status
+
+→ Check whether ignored files are being tracked or not.
+
+Check ignored files:
+
+git status --ignored
+
+→ Shows ignored files/folders.
+
+Remember:
+
+.gitignore
+→ Tell Git what NOT to track.
