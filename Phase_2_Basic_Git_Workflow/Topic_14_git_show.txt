@@ -1,0 +1,35 @@
+→ `git show` shows the details of a specific commit.
+
+## Basic Command
+git show <commit-hash>
+
+Example:
+git show e5a4ee9
+→ Shows:
+  - Commit hash
+  - Author
+  - Date
+  - Commit message
+  - Files changed
+  - Exact changes (diff)
+
+## Useful Command
+git show --stat <commit-hash>
+→ Shows a summary of files changed and
+  the number of lines changed.
+
+## Difference
+git log
+→ Shows commit history.
+
+git show <commit>
+→ Shows details of one specific commit.
+
+git diff
+→ Compares changes between two states.
+
+## Remember
+`git log`  = Which commits exist?
+`git show` = What happened in this commit?
+
+Topic 14 — DONE ✅
