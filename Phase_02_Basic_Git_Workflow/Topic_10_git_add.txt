@@ -1,0 +1,30 @@
+Topic 10 — git add
+
+→ `git add` moves selected changes from the Working Directory
+  to the Staging Area.
+
+Basic command:
+
+git add <file>
+
+→ Stages one specific file.
+
+git add .
+
+→ Stages all changes in the current directory.
+
+Examples:
+
+git add README.md
+git add .
+
+Flow:
+
+Working Directory
+      ↓ git add
+Staging Area
+
+Important:
+
+→ `git add` does NOT create a commit.
+→ It only prepares changes for the next commit.

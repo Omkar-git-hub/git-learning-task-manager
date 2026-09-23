@@ -1,0 +1,26 @@
+Topic 11 — git commit
+
+→ `git commit` saves the staged changes
+  into the Local Repository.
+
+Basic command:
+
+git commit -m "message"
+
+Example:
+
+git commit -m "Add project README"
+
+Flow:
+
+Working Directory
+      ↓ git add
+Staging Area
+      ↓ git commit
+Local Repository
+
+Important:
+
+→ Only staged changes are included in the commit.
+→ A commit creates a permanent point in Git history.
+→ Every commit gets a unique commit hash.

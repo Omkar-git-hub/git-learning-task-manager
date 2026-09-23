@@ -1,0 +1,64 @@
+Topic 15 — git diff
+
+→ `git diff` shows the differences between
+  two states of the project.
+
+1. Working Directory vs Last Commit
+
+git diff
+
+→ Shows unstaged changes.
+
+2. Staging Area vs Last Commit
+
+git diff --staged
+git diff --cached
+
+→ Shows staged changes.
+
+3. Compare Two Commits
+
+git diff A B
+
+→ Shows changes from A to B.
+
+4. Compare Two Branches
+
+git diff main develop
+
+→ Shows differences between main and develop.
+
+5. Local Branch vs Remote-Tracking Branch
+
+git diff develop origin/develop
+
+→ Shows differences between the two branches.
+
+6. Specific File
+
+git diff -- README.md
+
+→ Shows changes only in README.md.
+
+7. Only File Names
+
+git diff --name-only
+
+→ Shows only changed file names.
+
+8. Change Summary
+
+git diff --stat
+
+→ Shows a summary of changes.
+
+Remember:
+
+git diff
+→ What changed?
+
+git log
+→ What commits exist?
+
+git show <commit>
+→ What happened in one commit?
