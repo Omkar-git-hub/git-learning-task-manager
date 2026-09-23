@@ -1,0 +1,150 @@
+→ A commit message briefly explains what the commit contains.
+
+## Basic Command
+git commit -m "commit message"
+
+Example:
+git commit -m "Add Git Bash command notes"
+
+
+## How to Draft a Commit Message
+Ask:
+1. What did I change?
+2. Why did I change it? (when useful)
+3. Can another developer understand it quickly?
+
+Keep it:
+→ Short
+→ Clear
+→ Specific
+→ Meaningful
+
+
+## Good Examples
+git commit -m "Add Git Bash command notes"
+git commit -m "Fix login validation"
+git commit -m "Update README with setup instructions"
+git commit -m "Remove unused test files"
+
+
+## Avoid
+❌ git commit -m "changes"
+❌ git commit -m "update"
+❌ git commit -m "done"
+❌ git commit -m "final"
+
+
+## Commit Message Structure
+### Simple
+<verb> <what changed>
+
+Example:
+Add login validation
+
+
+### Conventional Commits
+Common professional format:
+<type>: <description>
+
+Example:
+feat: add login validation
+
+Common types:
+feat     → New feature
+fix      → Bug fix
+docs     → Documentation changes
+style    → Formatting/style changes
+refactor → Code restructuring without behavior change
+test     → Add/update tests
+chore    → Maintenance tasks
+build    → Build/dependency changes
+ci       → CI/CD changes
+perf     → Performance improvement
+revert   → Revert a previous commit
+
+
+Examples:
+feat: add user registration
+fix: handle invalid email input
+docs: update installation guide
+refactor: simplify authentication logic
+test: add login validation tests
+chore: update dependencies
+
+
+## Important Writing Rules
+→ Start with an action/imperative verb.
+
+Good:
+Add feature
+
+Not:
+Added feature
+
+→ Keep the subject concise.
+→ Focus on the change, not the process.
+
+Good:
+fix: prevent duplicate form submission
+
+Not:
+fix: worked on form for two hours
+
+
+→ One commit should ideally represent one logical change.
+→ Don't put unnecessary details in the subject line.
+
+
+## Subject Line
+
+For the first line:
+→ Keep it short and clear.
+→ Common practice is around 50 characters when practical.
+→ Don't end the subject with a period.
+
+Example:
+feat: add password reset
+
+
+## Commit Body
+For simple changes, a subject is enough.
+For complex changes, a body can explain:
+
+→ Why the change was needed.
+→ Important implementation details.
+→ Any relevant limitations.
+
+Example:
+feat: add password reset
+
+Users can now request a password reset
+through their registered email address.
+
+
+## Good Commit
+feat: add password validation
+→ Clearly identifies the type.
+→ Uses an action-oriented description.
+→ Explains exactly what changed.
+
+
+## Remember
+Commit message = Short explanation of the commit.
+Good commit message:
+→ Clear
+→ Specific
+→ Action-oriented
+→ Easy to understand
+→ Represents one logical change
+
+
+## Quick Formula
+[type]: <action> <what changed>
+
+Example:
+feat: add offline message delivery
+fix: resolve Bluetooth connection timeout
+docs: update Git learning notes
+
+
+Topic 12 — DONE ✅
