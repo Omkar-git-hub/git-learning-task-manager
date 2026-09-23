@@ -1,0 +1,47 @@
+→ `git status` shows the current state of the Git repository.
+
+→ It shows changes in:
+  - Working Directory
+  - Staging Area
+
+## Common States
+
+Untracked files
+→ New files that Git is not tracking yet.
+
+Changes not staged for commit
+→ Tracked files modified/deleted but not staged.
+
+Changes to be committed
+→ Changes already added to the Staging Area.
+
+Working tree clean
+→ No changes waiting to be committed.
+
+## Basic Flow
+
+New file
+    ↓
+git status
+    → Untracked
+
+git add
+    ↓
+git status
+    → Changes to be committed
+
+git commit
+    ↓
+git status
+    → Working tree clean
+
+## Command
+
+git status
+→ Check the current state before/after Git operations.
+
+## Remember
+
+`git status` = **"What is the current state of my repository?"**
+
+Topic 9 — DONE ✅
