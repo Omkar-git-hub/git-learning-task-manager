@@ -1,0 +1,23 @@
+Topic 18 — git branch
+
+→ Used to create, list, rename and delete branches.
+
+Commands:
+
+git branch
+→ List local branches.
+
+git branch <name>
+→ Create a branch.
+
+git branch -a
+→ List local and remote branches.
+
+git branch -d <name>
+→ Delete a merged branch.
+
+git branch -D <name>
+→ Force delete a branch.
+
+git branch -m <new-name>
+→ Rename the current branch.

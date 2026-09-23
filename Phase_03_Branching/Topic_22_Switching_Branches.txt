@@ -1,0 +1,20 @@
+Topic 22 — Switching Branches
+
+→ Switching changes the branch on which you are currently working.
+
+Command:
+
+git switch feature-login
+
+Check current branch:
+
+git branch
+
+The * shows the current branch.
+
+Example:
+
+* feature-login
+  main
+
+→ Changes and commits made after switching belong to the current branch.

@@ -1,0 +1,19 @@
+Topic 20 — git checkout
+
+→ Older command used for switching branches and restoring files.
+
+git checkout <branch>
+→ Switch branch.
+
+git checkout -b <branch>
+→ Create and switch to a branch.
+
+Modern alternative:
+
+git switch <branch>
+git switch -c <branch>
+
+Note:
+
+→ `git checkout` has multiple purposes.
+→ `git switch` is clearer for branch operations.

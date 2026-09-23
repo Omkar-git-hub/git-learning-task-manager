@@ -1,0 +1,22 @@
+Topic 23 — Branch Pointers
+
+→ A branch is a pointer/reference to a commit.
+
+Example:
+
+A---B---C
+        ↑
+       main
+
+After a new commit:
+
+A---B---C---D
+            ↑
+           main
+
+→ The branch pointer moves to the newest commit.
+
+Important:
+
+→ Commits do not move.
+→ Branch pointers move.

@@ -1,0 +1,25 @@
+Topic 21 — Creating Branches
+
+Create a branch:
+
+git branch feature-login
+
+Create and switch:
+
+git switch -c feature-login
+
+Check:
+
+git branch
+
+Important:
+
+→ Creating a branch does not automatically switch to it.
+
+Example:
+
+main
+ ↓
+git branch feature-login
+ ↓
+still on main

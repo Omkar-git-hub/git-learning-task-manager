@@ -1,0 +1,21 @@
+Topic 19 — git switch
+
+→ Used to switch between branches.
+
+git switch <branch>
+→ Switch to an existing branch.
+
+git switch -c <branch>
+→ Create and switch to a new branch.
+
+Example:
+
+git switch -c feature-login
+
+Flow:
+
+main
+ ↓
+git switch -c feature-login
+ ↓
+feature-login

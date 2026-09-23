@@ -1,0 +1,32 @@
+Topic 24 — HEAD
+
+→ HEAD tells Git where you are currently working.
+
+Normally:
+
+HEAD
+ ↓
+main
+ ↓
+latest commit
+
+When switching:
+
+HEAD
+ ↓
+feature
+ ↓
+latest feature commit
+
+Check HEAD:
+
+git status
+
+or:
+
+git log --oneline --decorate
+
+Important:
+
+→ HEAD usually points to the current branch.
+→ The current branch points to its latest commit.

@@ -1,0 +1,25 @@
+Topic 17 — What is a Branch?
+
+→ A branch is a movable pointer to a commit.
+
+→ It allows separate development without directly changing another branch.
+
+Example:
+
+main
+  |
+  A---B
+       \
+        C---D  feature
+
+Common use:
+
+main
+  ↓
+feature branch
+  ↓
+make changes
+  ↓
+test
+  ↓
+merge into main
