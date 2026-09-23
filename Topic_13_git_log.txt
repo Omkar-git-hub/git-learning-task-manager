@@ -1,0 +1,51 @@
+→ `git log` shows the commit history of a repository.
+
+## Basic Command
+git log
+→ Shows detailed commit history.
+
+git log --oneline
+→ Shows commits in a short, one-line format.
+
+git log --oneline --graph --decorate --all
+→ Shows commit history with branches, HEAD,
+  tags and graph structure.
+
+## Information Shown
+Commit hash
+→ Unique ID of the commit.
+Author
+→ Person who created the commit.
+Date
+→ When the commit was created.
+Commit message
+→ Describes what the commit changed.
+
+## Example
+
+git log --oneline
+
+e5a4ee9 Add Topic 6 notes
+0305717 Add Git Bash commands
+21e0feb Restore Topic 4 notes
+
+→ Newest commit appears first.
+
+## Useful Commands
+git log -n 5
+→ Shows the latest 5 commits.
+git log --oneline --all
+→ Shows commits from all branches.
+git log --oneline --graph
+→ Shows commits in a visual graph.
+
+## Remember
+`git log` = **View commit history**
+
+Commit history helps us understand:
+→ What changed
+→ When it changed
+→ Who changed it
+→ Commit order
+
+Topic 13 — DONE ✅
