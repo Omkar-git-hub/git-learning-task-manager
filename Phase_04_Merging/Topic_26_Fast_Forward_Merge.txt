@@ -1,0 +1,40 @@
+Topic 26 — Fast-Forward Merge
+
+→ A fast-forward merge happens when the current branch
+  has no new commits after the branch was created.
+
+Example:
+
+A---B---C
+        ↑
+      feature
+      main
+
+After:
+
+git switch main
+git merge feature
+
+Result:
+
+A---B---C
+        ↑
+    main, feature
+
+→ Git simply moves the main branch pointer forward.
+
+Important:
+
+→ No merge commit is created.
+→ No branch history is combined.
+→ The history remains linear.
+
+Fast-forward:
+
+Old main pointer
+      ↓
+      B
+
+New main pointer
+      ↓
+      C

@@ -1,0 +1,43 @@
+Topic 31 — Conflict Resolution
+
+→ Conflict resolution means manually deciding
+  what the final file should contain.
+
+When a conflict occurs:
+
+1. Open the conflicted file.
+
+2. Find the conflict markers:
+
+<<<<<<< HEAD
+current branch changes
+=======
+incoming branch changes
+>>>>>>> feature
+
+3. Decide what the final content should be.
+
+Possible choices:
+
+→ Keep current changes.
+→ Keep incoming changes.
+→ Keep both changes.
+→ Write a completely new combined version.
+
+4. Remove all conflict markers.
+
+5. Stage the resolved file.
+
+6. Complete the merge.
+
+Important:
+
+→ Git does not decide which code is correct.
+→ The developer must resolve the conflict.
+→ Always review the final file before completing the merge.
+
+Conflict markers must NOT remain in the final file:
+
+<<<<<<<
+=======
+>>>>>>>

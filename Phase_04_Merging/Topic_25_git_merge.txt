@@ -1,0 +1,32 @@
+Topic 25 — git merge
+
+→ `git merge` combines changes from one branch
+  into the current branch.
+
+Basic command:
+
+git merge <branch>
+
+Example:
+
+git switch main
+git merge feature-login
+
+Meaning:
+
+→ Current branch = main
+→ Merge feature-login into main
+
+Flow:
+
+main
+  ↓
+git merge feature-login
+  ↓
+main contains feature changes
+
+Important:
+
+→ The branch being merged does not change.
+→ The current branch receives the changes.
+→ Git may create a merge commit or perform a fast-forward merge.

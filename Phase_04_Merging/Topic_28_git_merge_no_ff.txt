@@ -1,0 +1,39 @@
+Topic 28 — git merge --no-ff
+
+→ `--no-ff` means "no fast-forward".
+
+→ It forces Git to create a merge commit,
+  even when a fast-forward merge is possible.
+
+Command:
+
+git merge --no-ff <branch>
+
+Example:
+
+git switch main
+git merge --no-ff feature-login
+
+Without --no-ff:
+
+A---B---C
+        ↑
+       main
+
+With --no-ff:
+
+A---B-------M
+     \     /
+      C---/
+
+M = Merge Commit
+
+Purpose:
+
+→ Preserve the fact that a feature branch was merged.
+→ Keep feature development visible in project history.
+
+Important:
+
+→ `--no-ff` creates a merge commit.
+→ It is useful when teams want explicit feature-merge history.

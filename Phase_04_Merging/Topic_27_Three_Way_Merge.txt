@@ -1,0 +1,41 @@
+Topic 27 — Three-Way Merge
+
+→ A three-way merge is used when both branches
+  have new commits after they diverged.
+
+Example:
+
+        C---D  feature
+       /
+A---B
+       \
+        E---F  main
+
+Common Base:
+
+B
+
+Git compares three points:
+
+1. Common Base → B
+2. Current Branch → F
+3. Incoming Branch → D
+
+Git uses these three versions to combine the changes.
+
+After merging:
+
+        C---D
+       /     \
+A---B         M
+       \     /
+        E---F
+
+M = Merge Commit
+
+Important:
+
+→ Three-way merge is needed when branches have diverged.
+→ Git uses the common base and both branch tips.
+→ Conflicts can occur if both branches changed
+  the same part of a file.

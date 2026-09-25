@@ -1,0 +1,59 @@
+Topic 32 — Merge Commits
+
+→ A merge commit is a commit created to combine
+  two different lines of development.
+
+Example:
+
+        C---D  feature
+       /     \
+A---B         M  main
+       \     /
+        E---F
+
+M = Merge Commit
+
+A merge commit normally has two parents:
+
+Parent 1:
+→ Previous commit on the current branch.
+
+Parent 2:
+→ Tip of the branch being merged.
+
+Example:
+
+main:
+A---B---E---F
+
+feature:
+    \
+     C---D
+
+After merge:
+
+        C---D
+       /     \
+A---B         M
+       \     /
+        E---F
+
+M records that the two histories were combined.
+
+Merge commit can be created when:
+
+→ Branches have diverged.
+→ `git merge --no-ff` is used.
+→ A conflict is resolved and the merge is completed.
+
+Important:
+
+→ A merge commit preserves both lines of history.
+→ It connects two branches into one history.
+→ Fast-forward merges do NOT create merge commits.
+
+Mental Model:
+
+Branch A ────────┐
+                 ├── Merge Commit
+Branch B ────────┘

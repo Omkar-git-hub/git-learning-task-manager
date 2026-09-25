@@ -1,0 +1,46 @@
+Topic 30 — Merge Conflicts
+
+→ A merge conflict happens when Git cannot automatically
+  combine changes from two branches.
+
+Common situation:
+
+→ Two branches modify the same part of the same file
+  in incompatible ways.
+
+Example:
+
+main:
+Hello Omkar
+
+feature:
+Hello Git
+
+Git cannot automatically decide which version to keep.
+
+Git adds conflict markers:
+
+<<<<<<< HEAD
+Hello Omkar
+=======
+Hello Git
+>>>>>>> feature
+
+Meaning:
+
+<<<<<<< HEAD
+→ Start of current branch changes.
+
+=======
+→ Separator between the two versions.
+
+>>>>>>> feature
+→ End of incoming branch changes.
+
+Important:
+
+→ A conflict does NOT mean Git is broken.
+→ It means Git needs a human decision.
+→ Same file changes do not always cause conflicts.
+→ Conflicts usually happen when incompatible changes
+  affect the same part of a file.

@@ -1,0 +1,38 @@
+Topic 29 — Common Base
+
+→ The common base is the latest commit that two branches
+  have in common before they diverge.
+
+Example:
+
+A---B---C
+     \
+      D---E
+
+If one branch contains C
+and the other contains E:
+
+Common Base = B
+
+Why it matters:
+
+→ Git uses the common base during a three-way merge.
+→ Git compares the changes made from the common base
+  on both branches.
+
+Mental Model:
+
+          Common Base
+              ↓
+              B
+             / \
+            /   \
+           C     D
+           |     |
+          main  feature
+
+Important:
+
+→ Common base is the starting point for comparing
+  the two branches' changes.
+→ It is usually the latest shared ancestor commit.
