@@ -1,0 +1,29 @@
+Topic 33 — What is Rebase?
+
+→ Rebase moves or replays commits from one branch
+  on top of another branch.
+
+Example:
+
+Before:
+
+A---B---C  main
+     \
+      D---E  feature
+
+After rebase:
+
+A---B---C---D'---E'  feature
+
+→ Feature commits are replayed on top of main.
+
+Important:
+
+→ Rebase creates new commit IDs for replayed commits.
+→ It creates a cleaner, linear history.
+→ Rebase does NOT move existing commits.
+→ It creates new versions of the commits.
+
+Mental Model:
+
+Rebase = Move my work to a new starting point.

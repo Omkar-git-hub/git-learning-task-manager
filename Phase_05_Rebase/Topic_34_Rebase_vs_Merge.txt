@@ -1,0 +1,38 @@
+Topic 34 — Rebase vs Merge
+
+Merge:
+
+→ Combines two branch histories.
+→ Preserves the original branch structure.
+→ May create a merge commit.
+
+Example:
+
+      D---E
+     /     \
+A---B       M
+     \     /
+      C---F
+
+Rebase:
+
+→ Replays commits on top of another branch.
+→ Produces a linear history.
+→ Does not create a merge commit for the rebase itself.
+
+Example:
+
+A---B---C---D'---E'
+
+Merge:
+
+→ Preserve branch history.
+
+Rebase:
+
+→ Create a linear history.
+
+Important:
+
+→ Both can integrate changes.
+→ They produce different commit histories.

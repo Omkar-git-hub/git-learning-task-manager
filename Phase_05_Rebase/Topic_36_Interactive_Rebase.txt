@@ -1,0 +1,50 @@
+Topic 36 — Interactive Rebase
+
+→ Interactive rebase allows you to edit a sequence
+  of commits.
+
+Basic command:
+
+git rebase -i HEAD~3
+
+→ Opens the last 3 commits for editing.
+
+Common actions:
+
+pick
+→ Keep the commit.
+
+reword
+→ Change the commit message.
+
+edit
+→ Stop and modify a commit.
+
+squash
+→ Combine a commit with the previous commit
+  and combine their messages.
+
+fixup
+→ Combine a commit with the previous commit
+  without keeping its message.
+
+drop
+→ Remove a commit from the history.
+
+Example:
+
+pick   A
+squash B
+reword C
+
+Result:
+
+→ B is combined with A.
+→ C's commit message can be changed.
+
+Important:
+
+→ Interactive rebase is mainly used to clean up
+  local or unpublished history.
+→ Be careful when rewriting commits that others
+  already depend on.

@@ -1,0 +1,42 @@
+Topic 38 — When NOT to Rebase
+
+→ Rebase rewrites commit history.
+
+Avoid rebasing commits that are already shared
+with other developers when rewriting them would
+cause problems for those developers.
+
+Example:
+
+Developer A pushes:
+
+A---B---C
+
+Developer B pulls C and starts working from it.
+
+If Developer A rebases and replaces C with C':
+
+A---B---C'
+
+→ Developer B's history is now based on the old C.
+
+This can create unnecessary synchronization problems.
+
+Be careful with:
+
+→ Shared branches.
+→ Public branches.
+→ Commits already pulled by other developers.
+→ Important release/history branches.
+
+Rebase is generally safer for:
+
+→ Local commits.
+→ Private feature branches.
+→ Commits that have not been shared.
+
+Important:
+
+→ Rebase is not inherently bad.
+→ The important question is whether the history
+  has already been shared with others.

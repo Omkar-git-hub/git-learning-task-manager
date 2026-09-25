@@ -1,0 +1,60 @@
+Topic 37 — Rebase Conflicts
+
+→ A rebase conflict happens when Git cannot
+  automatically replay a commit.
+
+Example:
+
+main changes:
+
+A---B---C
+
+feature:
+
+A---B---D
+
+During rebase:
+
+git rebase main
+
+Git tries to replay D on top of C.
+
+If D conflicts with C:
+
+→ Git pauses the rebase.
+→ The conflicted file contains conflict markers.
+
+<<<<<<<
+current changes
+=======
+incoming changes
+>>>>>>>
+
+Resolution:
+
+1. Open the conflicted file.
+2. Decide the correct final content.
+3. Remove conflict markers.
+4. Stage the resolved file.
+5. Continue the rebase.
+
+Command:
+
+git rebase --continue
+
+Other useful commands:
+
+git rebase --abort
+
+→ Cancel the rebase and return to the state
+  before the rebase started.
+
+git rebase --skip
+
+→ Skip the current commit being replayed.
+
+Important:
+
+→ Rebase conflicts happen during commit replay.
+→ Resolve one conflict at a time.
+→ Test the project after completing the rebase.

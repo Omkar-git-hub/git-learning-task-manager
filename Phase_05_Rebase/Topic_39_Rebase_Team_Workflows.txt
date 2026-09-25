@@ -1,0 +1,61 @@
+Topic 39 — Rebase in Team Workflows
+
+→ Teams may use rebase to keep feature branches
+  up to date with the latest main branch.
+
+Example:
+
+main:
+
+A---B---C---F
+
+feature:
+
+A---B---C---D---E
+
+If main receives F:
+
+A---B---C---F  main
+         \
+          D---E  feature
+
+Developer can rebase feature onto main:
+
+A---B---C---F---D'---E'  feature
+
+Then the feature branch contains the latest
+main changes with a linear history.
+
+Typical workflow:
+
+1. Start feature branch.
+2. Develop and commit.
+3. Main receives new changes.
+4. Update feature branch.
+5. Rebase feature onto main if the team workflow
+   allows it.
+6. Resolve conflicts if necessary.
+7. Test the feature.
+8. Push the updated branch.
+9. Create/update Pull Request.
+
+Important:
+
+→ Team rules should determine when rebase is used.
+→ Do not rewrite shared history without agreement.
+→ Rebase can make Pull Request history easier to follow.
+→ After rewriting already-pushed commits, pushing may
+  require a force push.
+
+Safer force-push option:
+
+git push --force-with-lease
+
+→ Helps prevent overwriting remote changes that you
+  do not have locally.
+
+Mental Model:
+
+Private work → Rebase is usually easier.
+
+Shared work → Coordinate before rewriting history.

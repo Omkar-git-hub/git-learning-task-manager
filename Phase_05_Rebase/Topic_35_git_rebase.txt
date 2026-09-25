@@ -1,0 +1,41 @@
+Topic 35 — git rebase
+
+→ `git rebase` moves the current branch's commits
+  on top of another branch.
+
+Basic command:
+
+git rebase <branch>
+
+Example:
+
+git switch feature
+git rebase main
+
+Before:
+
+A---B---C  main
+     \
+      D---E  feature
+
+After:
+
+A---B---C---D'---E'  feature
+
+Important:
+
+→ Always understand which branch is current.
+→ The current branch is the branch whose commits
+  are replayed.
+→ Rebase rewrites commit history.
+
+Common workflow:
+
+git switch feature
+git rebase main
+
+Then:
+
+→ Resolve conflicts if necessary.
+→ Continue the rebase.
+→ Test the result.
