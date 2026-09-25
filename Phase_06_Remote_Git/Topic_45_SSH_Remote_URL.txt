@@ -1,0 +1,60 @@
+Topic 45 — SSH Remote URL
+
+→ SSH is another way to connect Git
+  to a remote repository.
+
+Example:
+
+git@github.com:user/project.git
+
+SSH authentication uses:
+
+→ SSH key pair
+   • Private key
+   • Public key
+
+The public key is added to GitHub.
+
+The private key remains on your computer.
+
+Important:
+
+→ Never share the private key.
+→ SSH allows Git operations without entering
+  a username and password for every operation.
+
+
+
+// SSH — Setup Steps //
+1. Check for an existing SSH key:
+   ls ~/.ssh
+
+2. Generate a key if needed:
+   ssh-keygen -t ed25519 -C "your-email@example.com"
+
+3. Start SSH agent:
+   eval "$(ssh-agent -s)"
+
+4. Add the private key:
+   ssh-add ~/.ssh/id_ed25519
+
+5. Copy the public key:
+   cat ~/.ssh/id_ed25519.pub
+
+6. Add it to GitHub:
+   GitHub → Settings → SSH and GPG keys
+   → New SSH key
+   → Authentication Key
+   → Paste public key → Add SSH key
+
+7. Test the connection:
+   ssh -T git@github.com
+
+8. Add the SSH remote:
+   git remote add origin_ssh git@github.com:USERNAME/REPOSITORY.git
+
+9. Push:
+   git push -u origin_ssh main
+
+⚠️ Private key = NEVER share.
+   Public key = Add to GitHub.

@@ -1,0 +1,52 @@
+Topic 52 — Remote-Tracking Branches
+
+→ A remote-tracking branch is a local reference
+  that records the last known state of a branch
+  on a remote repository.
+
+Example:
+
+origin/main
+
+Meaning:
+
+origin
+→ Remote name.
+
+main
+→ Branch name.
+
+Important:
+
+→ `origin/main` is NOT the remote branch itself.
+→ It is a local remote-tracking reference.
+→ It represents the last known state of
+  the remote's main branch.
+
+Updated by commands such as:
+
+git fetch
+
+Example:
+
+Remote GitHub:
+main → A---B---C
+
+Local remote-tracking reference:
+
+origin/main → C
+
+After GitHub gets D:
+
+Remote:
+main → A---B---C---D
+
+Before fetch:
+
+origin/main → C
+
+After:
+
+git fetch
+
+origin/main → D

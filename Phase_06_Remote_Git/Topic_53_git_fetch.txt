@@ -1,0 +1,45 @@
+Topic 53 — git fetch
+
+→ `git fetch` downloads information and commits
+  from a remote repository.
+
+Command:
+
+git fetch
+
+Basic flow:
+
+Remote Repository
+       ↓
+   git fetch
+       ↓
+Remote-Tracking Branches
+
+Example:
+
+Remote:
+main → A---B---C
+
+Local:
+
+main
+origin/main → B
+
+After:
+
+git fetch
+
+main
+origin/main → C
+
+Important:
+
+→ `git fetch` does NOT normally change
+  your current local branch.
+→ It updates remote-tracking references.
+→ It allows you to inspect remote changes
+  before integrating them.
+
+Mental Model:
+
+fetch = "Get remote updates, but don't integrate them yet."

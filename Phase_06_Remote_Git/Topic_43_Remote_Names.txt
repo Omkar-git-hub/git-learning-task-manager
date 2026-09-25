@@ -1,0 +1,33 @@
+Topic 43 — Remote Names
+
+→ A remote name is a local nickname for a remote repository.
+
+Common name:
+
+origin
+
+Example:
+
+origin → GitHub repository
+
+But remote names can be customized:
+
+origin_https
+company
+upstream
+github
+
+Example:
+
+origin_https → GitHub repository
+
+Important:
+
+→ Remote names are chosen locally.
+→ `origin` is conventional, not mandatory.
+→ Different remote names can point to different repositories.
+
+Example:
+
+origin   → personal GitHub repository
+upstream → original open-source repository

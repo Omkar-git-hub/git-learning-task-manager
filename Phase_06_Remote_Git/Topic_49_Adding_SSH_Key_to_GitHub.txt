@@ -1,0 +1,23 @@
+Topic 49 — Adding SSH Key to GitHub
+
+→ To use SSH with GitHub, your public SSH key
+  must be added to your GitHub account.
+
+Basic process:
+
+1. Generate an SSH key pair.
+2. Keep the private key on your computer.
+3. Copy the public key.
+4. Add the public key to GitHub.
+5. Test the SSH connection.
+6. Use an SSH remote URL for Git operations.
+
+SSH remote example:
+
+git@github.com:user/project.git
+
+Important:
+
+→ The private key stays on your computer.
+→ Only the public key is added to GitHub.
+→ Never commit the private key to a repository.

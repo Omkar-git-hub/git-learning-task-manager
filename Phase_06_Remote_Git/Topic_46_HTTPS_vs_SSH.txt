@@ -1,0 +1,39 @@
+Topic 46 — HTTPS vs SSH
+
+HTTPS:
+
+Example:
+
+https://github.com/user/project.git
+
+Authentication:
+
+→ Personal Access Token
+→ Credential manager
+
+SSH:
+
+Example:
+
+git@github.com:user/project.git
+
+Authentication:
+
+→ SSH key pair
+
+Comparison:
+
+HTTPS
+→ Simple setup
+→ Uses HTTPS URLs
+→ Token/credential-based authentication
+
+SSH
+→ Requires initial SSH key setup
+→ Uses SSH URLs
+→ Key-based authentication
+
+Important:
+
+→ Both can access the same Git repository.
+→ The choice mainly affects connection and authentication.

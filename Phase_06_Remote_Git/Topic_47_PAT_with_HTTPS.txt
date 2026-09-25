@@ -1,0 +1,32 @@
+Topic 47 — Personal Access Token (PAT) with HTTPS
+
+→ A Personal Access Token is a credential used
+  for authenticating Git operations over HTTPS.
+
+Why PAT?
+
+→ GitHub does not use account passwords
+  for Git HTTPS authentication.
+
+Typical flow:
+
+git push
+     ↓
+GitHub requests authentication
+     ↓
+Username + Personal Access Token
+     ↓
+GitHub verifies credentials
+     ↓
+Push allowed
+
+Important:
+
+→ Treat a PAT like a password.
+→ Never commit a PAT into source code.
+→ Never share a PAT publicly.
+→ Store credentials using a secure credential manager
+  when appropriate.
+
+PAT permissions should follow
+the principle of least privilege.

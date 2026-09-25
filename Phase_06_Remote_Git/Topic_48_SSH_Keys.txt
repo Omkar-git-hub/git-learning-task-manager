@@ -1,0 +1,33 @@
+Topic 48 — SSH Keys
+
+→ SSH authentication uses a pair of cryptographic keys.
+
+Key pair:
+
+Private Key
+→ Stored securely on your computer.
+→ Must never be shared.
+
+Public Key
+→ Can be shared.
+→ Added to services such as GitHub.
+
+Mental model:
+
+Your computer
+    │
+    ├── Private Key 🔒
+    │
+    └── Public Key
+             ↓
+          GitHub
+
+During authentication:
+
+→ GitHub verifies that your computer
+  possesses the matching private key.
+
+Important:
+
+→ Never upload or share your private key.
+→ The public key is the one added to GitHub.

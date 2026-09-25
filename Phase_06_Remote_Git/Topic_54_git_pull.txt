@@ -1,0 +1,50 @@
+Topic 54 — git pull
+
+→ `git pull` retrieves remote changes
+  and integrates them into the current branch.
+
+Conceptually:
+
+git pull
+≈
+git fetch
++
+integration step
+
+The integration step may use:
+
+→ Merge
+or
+→ Rebase
+
+depending on configuration/options.
+
+Basic command:
+
+git pull
+
+Example:
+
+Local main:
+A---B
+
+Remote main:
+A---B---C
+
+After:
+
+git pull
+
+Local main:
+A---B---C
+
+Important:
+
+→ `git pull` is different from `git fetch`.
+→ fetch downloads updates without integrating them.
+→ pull downloads and integrates them.
+
+Mental Model:
+
+fetch = Get
+pull = Get + Integrate

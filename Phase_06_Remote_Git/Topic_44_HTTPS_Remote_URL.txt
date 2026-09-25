@@ -1,0 +1,62 @@
+Topic 44 — HTTPS Remote URL
+
+→ HTTPS is one way to connect Git
+  to a remote repository.
+
+Example:
+
+https://github.com/user/project.git
+
+Advantages:
+
+→ Easy to understand.
+→ Works with standard HTTPS connectivity.
+→ Common for GitHub repositories.
+
+Authentication:
+
+→ GitHub no longer accepts account passwords
+  for Git operations over HTTPS.
+→ Authentication can use a Personal Access Token (PAT)
+  or supported credential mechanisms.
+
+Example:
+
+git remote add origin https://github.com/user/project.git
+
+Important:
+
+→ HTTPS is the connection method.
+→ Authentication is a separate concept.
+
+
+
+// HTTPS — Setup Steps//
+1. Create a repository on GitHub.
+
+2. Copy the repository's HTTPS URL.
+
+3. Add the remote:
+   git remote add origin_https <HTTPS-URL>
+
+4. Generate a GitHub PAT:
+   GitHub → Settings → Developer settings
+   → Personal access tokens → Fine-grained tokens
+   → Generate new token
+
+5. Set:
+   → Repository access: Required repository
+   → Permissions: Contents → Read and write
+
+6. Generate the token and copy it.
+   ⚠️ Save it securely. Do not share or commit it.
+   
+7. Push:
+   git push -u origin_https main
+
+8. When asked:
+   Username → GitHub username
+   Password → Paste the PAT
+
+9. Git Credential Manager can save the credentials
+   so you don't need to enter them repeatedly.

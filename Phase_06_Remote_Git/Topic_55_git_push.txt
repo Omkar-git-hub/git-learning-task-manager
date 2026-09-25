@@ -1,0 +1,49 @@
+Topic 55 — git push
+
+→ `git push` sends local commits
+  to a remote repository.
+
+Basic command:
+
+git push <remote> <branch>
+
+Example:
+
+git push origin main
+
+Flow:
+
+Local Repository
+      ↓
+  git push
+      ↓
+Remote Repository
+
+Example:
+
+Local:
+
+A---B---C
+
+Remote:
+
+A---B
+
+After push:
+
+Local:
+
+A---B---C
+
+Remote:
+
+A---B---C
+
+Important:
+
+→ Push sends commits and related Git objects
+  needed by the remote.
+→ You normally push commits, not just working-directory
+  file changes.
+→ The remote may reject a push if it would overwrite
+  remote history or violate repository rules.

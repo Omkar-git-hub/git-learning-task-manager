@@ -1,0 +1,34 @@
+Topic 50 — git remote set-url
+
+→ Changes the URL of an existing remote.
+
+Command:
+
+git remote set-url <remote> <new-url>
+
+Example:
+
+git remote set-url origin git@github.com:user/project.git
+
+Before:
+
+origin → HTTPS
+
+After:
+
+origin → SSH
+
+Useful when:
+
+→ Switching from HTTPS to SSH.
+→ Changing repository location.
+→ Updating a renamed repository URL.
+
+Check:
+
+git remote -v
+
+Important:
+
+→ This changes the remote URL.
+→ It does not rename the remote.

@@ -1,0 +1,47 @@
+Topic 57 — origin vs Custom Remote Names
+
+→ `origin` is the conventional default name
+  for the remote repository.
+
+Example:
+
+origin → GitHub repository
+
+But remote names are customizable.
+
+Example:
+
+origin_https → GitHub repository
+
+Both are valid:
+
+origin
+origin_https
+
+There is no special technical meaning
+built into the name `origin`.
+
+Example:
+
+git remote add origin_https <url>
+
+Then:
+
+git fetch origin_https
+git push origin_https main
+
+Remote-tracking branch:
+
+origin_https/main
+
+Meaning:
+
+→ `origin_https` = local remote name.
+→ `main` = branch on that remote.
+→ `origin_https/main` = local remote-tracking reference.
+
+Important:
+
+→ Remote names are local labels.
+→ Teams often use `origin` because it is conventional.
+→ A custom name is completely valid.

@@ -1,0 +1,41 @@
+Topic 40 — What is a Remote Repository?
+
+→ A remote repository is a Git repository stored
+  outside your local computer.
+
+Examples:
+
+→ GitHub
+→ GitLab
+→ Bitbucket
+
+Local Repository:
+→ Git repository on your computer.
+
+Remote Repository:
+→ Git repository hosted on a remote server/platform.
+
+Basic flow:
+
+Working Directory
+      ↓ git add
+Staging Area
+      ↓ git commit
+Local Repository
+      ↓ git push
+Remote Repository
+
+Important:
+
+→ Git itself is distributed.
+Distributed (Git): You and your team each download the entire project history onto your laptops.
+
+→ A remote repository is used for sharing,
+  backup, and collaboration.
+
+
+- Centralised System (e.g., SVN)
+Definition: A system where one central server stores the entire project history and all file versions.
+
+- Distributed System (e.g., BitKeeper, Git)
+Definition: A system where every developer's local computer stores the entire project history and every single version of the files.

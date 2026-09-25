@@ -1,0 +1,29 @@
+Topic 41 — git remote
+
+→ `git remote` manages connections to remote repositories.
+
+List remotes:
+
+git remote
+
+→ Shows remote names.
+
+Show remote URLs:
+
+git remote -v
+
+→ Shows fetch and push URLs.
+
+Show detailed information:
+
+git remote show <remote>
+
+Example:
+
+git remote show origin
+
+Important:
+
+→ A remote is a named connection to another repository.
+→ The remote name is local configuration.
+→ `origin` is only a common convention.

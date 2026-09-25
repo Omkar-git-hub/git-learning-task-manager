@@ -1,0 +1,45 @@
+Topic 56 — Tracking / Upstream Branches
+
+→ An upstream branch connects a local branch
+  with a remote-tracking branch.
+
+Example:
+
+main
+  ↓
+origin/main
+
+Meaning:
+
+→ Local main tracks origin/main.
+
+Why useful?
+
+→ Git knows which remote branch is associated
+  with the local branch.
+→ Commands such as `git pull` and `git push`
+  can often be used without specifying
+  the remote and branch every time.
+
+Example:
+
+git push -u origin main
+
+The `-u` option sets the upstream relationship.
+
+After tracking is configured:
+
+git push
+
+git pull
+
+can often be used directly.
+
+Check tracking information:
+
+git branch -vv
+
+Important:
+
+→ Upstream configuration is stored locally.
+→ It connects a local branch to a remote-tracking branch.

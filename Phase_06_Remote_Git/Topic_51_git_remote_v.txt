@@ -1,0 +1,26 @@
+Topic 51 — git remote -v
+
+→ Shows the URLs configured for remote repositories.
+
+Command:
+
+git remote -v
+
+Example output:
+
+origin  https://github.com/user/project.git (fetch)
+origin  https://github.com/user/project.git (push)
+
+Meaning:
+
+(fetch)
+→ URL used to retrieve data.
+
+(push)
+→ URL used to send data.
+
+Important:
+
+→ Useful for checking whether Git is connected
+  to the expected repository.
+→ A remote can have different fetch and push URLs.

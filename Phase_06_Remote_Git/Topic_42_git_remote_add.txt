@@ -1,0 +1,30 @@
+Topic 42 — git remote add
+
+→ Adds a remote repository connection
+  to the local Git repository.
+
+Command:
+
+git remote add <name> <url>
+
+Example:
+
+git remote add origin https://github.com/user/project.git
+
+Meaning:
+
+origin
+→ Name of the remote.
+
+URL
+→ Location of the remote repository.
+
+Check:
+
+git remote -v
+
+Important:
+
+→ Adding a remote does not upload your code.
+→ It only creates the connection.
+→ `git push` is used to send commits to the remote.
