@@ -1,0 +1,144 @@
+Topic 60 — Soft / Mixed / Hard Reset
+
+The three reset modes control what happens after HEAD moves.
+
+--------------------------------------------------
+
+1. SOFT RESET
+
+git reset --soft <commit>
+
+HEAD:
+→ Moves to selected commit.
+
+Staging Area:
+→ Keeps changes staged.
+
+Working Directory:
+→ Keeps changes.
+
+Use when:
+→ You want to remove one or more commits
+→ but keep all their changes ready to commit again.
+
+Example:
+
+A → B → C
+
+git reset --soft B
+
+Result:
+
+A → B
+
+Changes from C:
+→ Still staged
+→ Can create a new commit
+
+Mental model:
+
+SOFT = Move commit pointer, KEEP changes STAGED.
+
+
+--------------------------------------------------
+
+2. MIXED RESET
+
+git reset --mixed <commit>
+
+or simply:
+
+git reset <commit>
+
+HEAD:
+→ Moves to selected commit.
+
+Staging Area:
+→ Changes become unstaged.
+
+Working Directory:
+→ Changes remain.
+
+Use when:
+→ You want to remove commits
+→ but want to review/edit the changes before committing again.
+
+Example:
+
+A → B → C
+
+git reset B
+
+Result:
+
+A → B
+
+Changes from C:
+→ Still in files
+→ Not staged
+
+Mental model:
+
+MIXED = Move HEAD + KEEP file changes + UNSTAGE.
+
+
+--------------------------------------------------
+
+3. HARD RESET
+
+git reset --hard <commit>
+
+HEAD:
+→ Moves to selected commit.
+
+Staging Area:
+→ Reset.
+
+Working Directory:
+→ Reset.
+
+Use when:
+→ You want to completely throw away local changes/commits
+→ and return exactly to an earlier commit.
+
+Example:
+
+A → B → C
+
+git reset --hard B
+
+Result:
+
+A → B
+
+Changes introduced by C:
+→ Removed from history position
+→ Removed from working directory
+
+WARNING:
+Uncommitted changes can be permanently lost.
+
+Mental model:
+
+HARD = Move HEAD + reset staging + reset files.
+
+
+--------------------------------------------------
+
+QUICK MEMORY:
+
+--soft
+→ Keep changes staged
+
+--mixed
+→ Keep changes but unstage them
+
+--hard
+→ Remove changes
+
+
+Simple:
+
+SOFT  = Keep staged
+MIXED = Keep files
+HARD  = Throw away

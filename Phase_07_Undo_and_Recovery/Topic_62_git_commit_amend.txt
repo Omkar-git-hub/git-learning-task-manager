@@ -1,0 +1,47 @@
+Topic 62 — git commit --amend
+
+→ Used to modify the MOST RECENT commit.
+
+Useful when:
+→ Commit message is wrong.
+→ You forgot to include a file.
+→ You want to fix something immediately after committing.
+
+--------------------------------------------------
+
+Change the latest commit message:
+
+git commit --amend -m "New commit message"
+
+
+Add a forgotten file to the latest commit:
+
+git add <file>
+git commit --amend
+
+
+Example:
+
+A → B
+
+You realize B is missing a file.
+
+git add missing-file.txt
+git commit --amend
+
+Result:
+
+A → B'
+
+B' replaces B with a new commit containing the additional file.
+
+
+Important:
+
+Amend creates a new commit ID.
+
+Avoid amending commits that are already shared with others.
+
+Mental model:
+
+amend = "Fix my latest commit."

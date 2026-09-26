@@ -1,0 +1,84 @@
+Topic 64 — Recovering Lost Commits
+
+A commit can appear "lost" after:
+
+→ git reset
+→ git rebase
+→ deleting/moving a branch
+→ accidental history changes
+
+
+Recovery process:
+
+1. Find the commit
+
+git reflog
+
+
+2. Inspect it
+
+git show <commit-hash>
+
+
+3. Safely create a branch
+
+git branch recovery <commit-hash>
+
+
+Now the commit is protected by the recovery branch.
+
+You can inspect and decide what to do next.
+
+
+Example:
+
+A → B → C
+
+Accident:
+
+git reset --hard A
+
+Current branch:
+
+A
+
+But reflog shows:
+
+C
+
+
+Recovery:
+
+git branch recovery C
+
+
+Now:
+
+A ← main
+
+C ← recovery
+
+
+The lost work is available again.
+
+
+Important:
+
+Use a recovery branch when unsure.
+
+Do NOT immediately use:
+
+git reset --hard <hash>
+
+unless you understand exactly what you are doing.
+
+
+Mental model:
+
+reflog → FIND
+
+git show → CHECK
+
+git branch recovery → SAVE
+
+Then decide what to do.

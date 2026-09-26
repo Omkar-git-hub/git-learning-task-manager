@@ -1,0 +1,40 @@
+Topic 59 — git reset
+
+→ Used to move HEAD/current branch to another commit.
+→ It changes LOCAL history.
+→ It can also change the Staging Area and Working Directory depending on the mode.
+
+Basic:
+
+git reset <commit>
+
+Example:
+
+git reset HEAD~1
+
+Meaning:
+→ Move current branch one commit backward.
+
+
+Reset has three important modes:
+
+--soft
+--mixed
+--hard
+
+
+Important mental model:
+
+git reset = "Move my branch back."
+
+git restore = "Restore my file."
+
+git revert = "Create a new commit that undoes an old commit."
+
+
+Use reset mainly when:
+→ Working on your own/local history.
+→ You need to remove or redo commits.
+→ You want to move HEAD backward.
+
+Be careful with reset on shared/public history.

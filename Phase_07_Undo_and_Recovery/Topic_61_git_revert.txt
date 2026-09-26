@@ -1,0 +1,47 @@
+Topic 61 — git revert
+
+→ Used to UNDO a COMMIT safely.
+→ Creates a NEW commit that reverses an earlier commit.
+→ Does NOT delete the original commit.
+→ Does NOT rewrite history.
+
+Command:
+
+git revert <commit>
+
+Example:
+
+A → B → C
+
+git revert C
+
+Result:
+
+A → B → C → D
+
+D = new commit that reverses C.
+
+
+Why use revert?
+
+Use it when:
+→ The commit has already been pushed.
+→ Other developers may already have the commit.
+→ You are working on shared/public history.
+→ You want a clear record of the undo operation.
+
+
+Important:
+
+reset:
+→ Moves history backward.
+
+revert:
+→ Adds a new commit that undoes previous work.
+
+
+Mental model:
+
+RESET  = "Pretend my branch is back there."
+
+REVERT = "Keep history, but undo that change with a new commit."

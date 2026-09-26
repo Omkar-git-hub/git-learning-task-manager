@@ -1,0 +1,56 @@
+Topic 58 — git restore
+
+→ Used to restore FILES.
+→ Mainly works with the Working Directory and Staging Area.
+→ It does NOT move HEAD.
+→ It does NOT delete commits.
+
+1. Discard changes in a file
+
+git restore <file>
+
+Meaning:
+→ Remove unstaged changes from the file.
+→ Restore it to the version from the current commit (HEAD).
+
+Example:
+You modified app.txt but have NOT committed it.
+
+git restore app.txt
+
+Result:
+→ Your modification is removed.
+→ Commit history is unchanged.
+
+
+2. Unstage a file
+
+git restore --staged <file>
+
+Meaning:
+→ Remove the file from Staging Area.
+→ Keep the actual file changes in Working Directory.
+
+Example:
+
+git add app.txt
+git restore --staged app.txt
+
+Result:
+→ app.txt becomes unstaged.
+→ Your changes are still present.
+
+
+3. Unstage + discard changes
+
+git restore --staged <file>
+git restore <file>
+
+Result:
+→ File is unstaged.
+→ File changes are discarded.
+
+
+Important:
+git restore = work with FILE CONTENT.
+It does not move the branch pointer.

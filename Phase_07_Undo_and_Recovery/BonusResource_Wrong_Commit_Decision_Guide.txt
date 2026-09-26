@@ -1,0 +1,497 @@
+PHASE 7 — WRONG COMMIT & RECOVERY DECISION GUIDE
+================================================
+
+Purpose
+-------
+This is a practical decision guide for choosing between:
+git restore, git reset, git revert, git commit --amend, and git reflog.
+
+The main question is:
+
+"What went wrong, and has it been committed/shared yet?"
+
+
+
+1. WRONG CHANGE — NOT COMMITTED
+--------------------------------
+
+Just want to discard file changes:
+
+    git restore <file>
+
+Use when:
+- You modified a file.
+- You have NOT committed the change.
+- You want the file back to the current HEAD version.
+
+Example:
+
+    You changed app.py
+    You did NOT commit.
+
+    git restore app.py
+
+
+
+2. WRONG FILE WAS STAGED
+------------------------
+
+You used git add, but now want to remove the file from staging.
+
+    git restore --staged <file>
+
+Use when:
+- The file is staged.
+- You want to unstage it.
+- You want to KEEP the changes in the working directory.
+
+Example:
+
+    git add app.py
+    git restore --staged app.py
+
+Result:
+- app.py becomes unstaged.
+- Your file changes remain.
+
+
+
+3. WRONG LATEST COMMIT — NEED TO FIX IT
+---------------------------------------
+
+If the latest commit is yours and you want to modify it:
+
+    git commit --amend
+
+Useful when:
+- You forgot a file.
+- You want to fix the latest commit message.
+- You want to add a small correction to the latest commit.
+
+Example:
+
+    git add README.md
+    git commit --amend
+
+Important:
+- Amend creates a new commit ID.
+- Avoid amending commits already shared with other developers.
+
+
+
+4. REMOVE LOCAL COMMITS — RESET
+-------------------------------
+
+Use reset when you want to move your current branch back to an earlier commit.
+
+Example history:
+
+    A → B → C
+
+To move back one commit:
+
+    git reset HEAD~1
+
+Reset is mainly appropriate for local/private history.
+
+There are three important modes.
+
+
+4.1 SOFT RESET
+--------------
+
+    git reset --soft <commit>
+
+Result:
+- HEAD moves.
+- Changes remain staged.
+- Working Directory keeps the changes.
+
+Use when:
+- You want to remove commits.
+- You want to keep all their changes.
+- You want the changes ready to commit again.
+
+Mental model:
+
+    SOFT = Move HEAD + Keep Changes Staged
+
+
+4.2 MIXED RESET
+---------------
+
+    git reset --mixed <commit>
+
+or:
+
+    git reset <commit>
+
+Result:
+- HEAD moves.
+- Changes remain in Working Directory.
+- Changes become unstaged.
+
+Use when:
+- You want to remove commits.
+- You want to keep the file changes.
+- You want to review/edit before staging again.
+
+Mental model:
+
+    MIXED = Move HEAD + Keep Files + Unstage
+
+Note:
+--mixed is the default reset mode.
+
+
+4.3 HARD RESET
+--------------
+
+    git reset --hard <commit>
+
+Result:
+- HEAD moves.
+- Staging Area is reset.
+- Working Directory is reset.
+
+Use when:
+- You intentionally want to discard local changes.
+- You want your working tree to exactly match an earlier commit.
+
+Example:
+
+    A → B → C
+
+    git reset --hard B
+
+Result:
+
+    A → B
+
+WARNING:
+Uncommitted changes can be permanently lost.
+
+Mental model:
+
+    HARD = Move HEAD + Reset Staging + Reset Files
+
+
+
+5. BAD COMMIT ALREADY PUSHED/SHARED — REVERT
+--------------------------------------------
+
+If a bad commit is already shared with other developers, use:
+
+    git revert <commit>
+
+Example:
+
+    A → B → C
+
+    git revert C
+
+Result:
+
+    A → B → C → D
+
+D is a new commit that reverses the changes introduced by C.
+
+Important:
+- The original commit C remains in history.
+- History is not rewritten.
+- This is useful for shared/public branches.
+
+Mental model:
+
+    RESET  = Move history backward
+    REVERT = Add a new commit that undoes the old commit
+
+
+
+6. ACCIDENTALLY RESET/REBASED — RECOVER WITH REFLOG
+---------------------------------------------------
+
+If a commit appears to be lost after reset, rebase, checkout, or another history operation:
+
+    git reflog
+
+Reflog shows previous positions of HEAD and local references.
+
+Example:
+
+    A → B → C
+
+Accident:
+
+    git reset --hard A
+
+You may no longer see B and C in normal branch history.
+
+First:
+
+    git reflog
+
+Then inspect the commit:
+
+    git show <hash>
+
+Safely protect it:
+
+    git branch recovery <hash>
+
+Now you can investigate without immediately changing your main branch.
+
+Mental model:
+
+    reflog → FIND
+    git show → CHECK
+    git branch recovery → SAVE
+
+
+
+7. RESTORE vs RESET vs REVERT
+-----------------------------
+
+Command             Main Purpose                         Changes History?
+---------------------------------------------------------------------------
+git restore         Restore file content                 No
+git reset           Move branch/HEAD backward            Yes
+git revert          Undo a commit with a new commit     No
+git commit --amend  Modify the latest commit             Yes
+git reflog          Find previous HEAD positions         No
+
+
+
+8. SIMPLE MENTAL MODEL
+----------------------
+
+RESTORE
+    "Fix/restore my FILE."
+
+RESET
+    "Move my BRANCH BACK."
+
+REVERT
+    "UNDO a COMMIT with another COMMIT."
+
+AMEND
+    "Fix my LAST COMMIT."
+
+REFLOG
+    "Find where my HEAD WAS."
+
+
+9. WRONG COMMIT DECISION GUIDE
+------------------------------
+
+WRONG COMMIT / WRONG CHANGE
+        |
+        +-- I have NOT committed yet
+        |       |
+        |       +-- Discard file changes
+        |       |       -> git restore <file>
+        |       |
+        |       +-- Accidentally staged a file
+        |               -> git restore --staged <file>
+        |
+        +-- I committed, but want to fix the LATEST commit
+        |       |
+        |       -> git commit --amend
+        |
+        +-- I want to REMOVE LOCAL commits
+        |       |
+        |       +-- Keep changes staged
+        |       |       -> git reset --soft
+        |       |
+        |       +-- Keep changes but unstage
+        |       |       -> git reset --mixed
+        |       |
+        |       +-- Completely discard changes
+        |               -> git reset --hard
+        |
+        +-- Commit is already PUSHED/SHARED
+        |       |
+        |       -> git revert
+        |
+        +-- I accidentally reset/rebased and LOST a commit
+                |
+                -> git reflog
+                -> git show <hash>
+                -> git branch recovery <hash>
+
+
+10. REAL-WORLD EXAMPLES
+-----------------------
+
+Case 1 — Edited a file accidentally
+------------------------------------
+
+You changed app.py but did NOT commit.
+
+Use:
+
+    git restore app.py
+
+
+Case 2 — Accidentally staged a file
+-----------------------------------
+
+You ran:
+
+    git add app.py
+
+But you do not want it staged.
+
+Use:
+
+    git restore --staged app.py
+
+Your changes remain.
+
+
+Case 3 — Bad local commit, keep changes staged
+----------------------------------------------
+
+History:
+
+    A → B → C
+
+C is wrong and nobody has received it.
+
+Use:
+
+    git reset --soft HEAD~1
+
+Now C is removed from the branch history, but its changes remain staged.
+
+
+Case 4 — Bad local commit, keep changes unstaged
+------------------------------------------------
+
+History:
+
+    A → B → C
+
+Use:
+
+    git reset --mixed HEAD~1
+
+The commit is removed from the branch history, but the file changes remain unstaged.
+
+
+Case 5 — Completely throw away a local commit/change
+-----------------------------------------------------
+
+History:
+
+    A → B → C
+
+C is completely useless and you do not need its changes.
+
+Use:
+
+    git reset --hard B
+
+WARNING:
+Make sure you really want to discard the changes.
+
+
+Case 6 — Bad commit was already pushed
+--------------------------------------
+
+History:
+
+    A → B → C
+
+C is wrong and already shared.
+
+Use:
+
+    git revert C
+
+Result:
+
+    A → B → C → D
+
+D reverses C.
+
+
+Case 7 — Forgot a file in the latest commit
+--------------------------------------------
+
+History:
+
+    A → B
+
+B is the latest commit and README.md was forgotten.
+
+Use:
+
+    git add README.md
+    git commit --amend
+
+The latest commit is replaced by a new corrected commit.
+
+
+Case 8 — Accidentally reset too far
+------------------------------------
+
+History:
+
+    A → B → C
+
+You run:
+
+    git reset --hard A
+
+Now B and C are no longer the current branch history.
+
+Use:
+
+    git reflog
+
+Find B or C.
+
+Then:
+
+    git branch recovery <hash>
+
+Your recovered commit is now safely referenced by the recovery branch.
+
+
+11. ONE RULE TO REMEMBER
+------------------------
+
+NOT COMMITTED?
+    → restore
+
+WRONG LATEST COMMIT?
+    → amend
+
+REMOVE LOCAL COMMITS?
+    → reset
+
+UNDO SHARED/PUSHED COMMIT?
+    → revert
+
+LOST COMMIT?
+    → reflog
+
+
+12. SAFETY RULE
+---------------
+
+Before using reset --hard:
+
+    git status
+
+Before rewriting local history:
+
+    git log --oneline --graph
+
+If the commit is already shared with other developers:
+    Prefer git revert instead of rewriting shared history.
+
+If you are unsure after an accidental reset/rebase:
+    Use git reflog first.
+    Create a recovery branch before doing more history changes.

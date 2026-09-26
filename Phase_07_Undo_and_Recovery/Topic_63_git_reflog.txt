@@ -1,0 +1,52 @@
+Topic 63 — git reflog
+
+→ Records movements of HEAD and local references.
+→ Useful for finding commits that appear to be lost.
+
+Command:
+
+git reflog
+
+
+Example:
+
+You have:
+
+A → B → C
+
+Then accidentally run:
+
+git reset --hard A
+
+Now B and C are no longer reachable from the normal branch history.
+
+But reflog may still show:
+
+C
+B
+A
+
+
+You can inspect a commit:
+
+git show <commit-hash>
+
+
+You can create a recovery branch:
+
+git branch recovery <commit-hash>
+
+
+Important:
+
+git log
+→ Shows normal reachable commit history.
+
+git reflog
+→ Shows where your local HEAD/reference has been.
+
+Mental model:
+
+git log = "What is in my current history?"
+
+git reflog = "Where has my HEAD been?"
